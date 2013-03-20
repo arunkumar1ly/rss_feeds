@@ -1,0 +1,15 @@
+<div id="header">
+<h1>Latest Feeds</h1>
+</div>
+
+<div id="content">
+<%= paginate @feed_entries%>
+<p><%= render(@feed_entries) || 'There is no Feeds'%><p>
+<%= paginate @feed_entries%>
+</div>
+
+<div id="sidebar">
+<p>
+<li><%= link_to "Home", feed_entries_path %></li>
+</p>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  app: MyString
+  app_url: MyText
+  entity_name: MyString
+  last_processed: 2013-03-21 02:35:16
+  is_pending: MyString
+  last_requested_processing: 2013-03-21 02:35:16
+
+two:
+  app: MyString
+  app_url: MyText
+  entity_name: MyString
+  last_processed: 2013-03-21 02:35:16
+  is_pending: MyString
+  last_requested_processing: 2013-03-21 02:35:16

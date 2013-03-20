@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  app_key_id: 1
+  name: MyString
+  summary: MyText
+  url: MyString
+  published_at: 2013-03-21 02:35:02
+  guid: MyString
+  is_star: false
+  is_to_read: false
+  last_clicked_on: 2013-03-21 02:35:02
+
+two:
+  app_key_id: 1
+  name: MyString
+  summary: MyText
+  url: MyString
+  published_at: 2013-03-21 02:35:02
+  guid: MyString
+  is_star: false
+  is_to_read: false
+  last_clicked_on: 2013-03-21 02:35:02

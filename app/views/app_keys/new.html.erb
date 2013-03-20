@@ -1,0 +1,24 @@
+<h1>Add New Feed URL</h1>
+
+<%= render 'form' %>
+
+<h1>List of Existing Feed URL</h1>
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+<table>
+  <tr>
+    <th>App url</th>
+    <th>Entity name</th>
+  </tr>
+
+<% @app_keys.each do |app_key| %>
+  <tr>
+    <td><%= app_key.app_url %></td>
+    <td><%= app_key.entity_name %></td>
+    <td><%= link_to 'Destroy', app_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

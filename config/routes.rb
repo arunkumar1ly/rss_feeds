@@ -1,7 +1,6 @@
 RssFeed::Application.routes.draw do
   resources :app_keys
 
-
   resources :feed_entries
 
 

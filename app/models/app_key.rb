@@ -4,6 +4,10 @@ class AppKey < ActiveRecord::Base
   before_create :create_object_value
   has_many :feed_entries, dependent: :destroy
 
+  def new_url?(url)
+    exists? app_url: url
+  end
+
   private
   
    	def create_object_value

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320210516) do
+ActiveRecord::Schema.define(:version => 20130328172650) do
 
   create_table "app_keys", :force => true do |t|
     t.string   "app"
@@ -31,11 +31,15 @@ ActiveRecord::Schema.define(:version => 20130320210516) do
     t.string   "url"
     t.datetime "published_at"
     t.string   "guid"
-    t.boolean  "is_star"
-    t.boolean  "is_to_read"
+    t.boolean  "is_star",         :default => false
+    t.boolean  "is_to_read",      :default => false
     t.datetime "last_clicked_on"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
+
+  add_index "feed_entries", ["app_key_id", "created_at"], :name => "index_feed_entries_on_app_key_id_and_created_at"
+  add_index "feed_entries", ["is_star", "created_at"], :name => "index_feed_entries_on_is_star_and_created_at"
+  add_index "feed_entries", ["is_to_read", "created_at"], :name => "index_feed_entries_on_is_to_read_and_created_at"
 
 end

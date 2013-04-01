@@ -1,1 +1,15 @@
-<p>Feed Name: <%= link_to feed_entry.name, feed_entry.url %></p>
+<p> 
+	<% if feed_entry.is_star? %> 
+		<%= link_to "Un-Star |", feed_entry_path(:id => feed_entry.id, :attribute => :is_star), method: :put %>
+	<% else %> 
+		<%= link_to "Star |", feed_entry_path(:id => feed_entry.id, :attribute => :is_star), method: :put %>
+	<% end %>
+
+	<% if feed_entry.is_to_read? %> 
+		<%= link_to "Un-Read |", feed_entry_path(:id => feed_entry.id, :attribute => :is_to_read), method: :put %> 
+	<% else %> 
+		<%= link_to "To-Read |", feed_entry_path(:id => feed_entry.id, :attribute => :is_to_read), method: :put %>
+	<% end %>
+	
+	<%= link_to feed_entry.name, feed_entry_path(:id => feed_entry.id), method: :get %>
+</p>

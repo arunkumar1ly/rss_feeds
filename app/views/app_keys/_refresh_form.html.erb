@@ -1,0 +1,6 @@
+
+<% if @app_key.is_pending == "done" %>
+	<%= form_for (@app_key) do |f| %>
+		<%= f.submit "Refresh" %>
+	<% end %>
+<%end%>

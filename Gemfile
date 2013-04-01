@@ -4,6 +4,8 @@ gem 'rails', '3.2.9'
 gem 'feedzirra'
 gem 'meta_search'
 gem 'kaminari'
+gem 'bootstrap-sass', '2.1'
+gem 'bootstrap-kaminari-views'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

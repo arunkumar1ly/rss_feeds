@@ -1,9 +1,7 @@
 RssFeed::Application.routes.draw do
   resources :app_keys
-
   resources :feed_entries
-
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

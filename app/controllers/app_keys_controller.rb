@@ -23,4 +23,21 @@ class AppKeysController < ApplicationController
     redirect_to new_app_key_path
   end
 
+  def show 
+    @app_key = AppKey.find(params[:id])
+    @search = FeedEntry.search(params[:search])
+    @feed_entries = @app_key.feed_entries.page(params[:page])
+    @app_keys = AppKey.all
+    #render :template => 'feed_entries/index'
+  end
+
+  def update
+    @app_key = AppKey.find(params[:id])
+    #@app_key.update_attributes(is_pending: "pending")
+    @app_key.last_requested_processing =  Time.now
+    @app_key.is_pending = "pending"
+    @app_key.save!
+    redirect_to app_key_path(@app_key)
+  end
+
 end

@@ -1,11 +1,14 @@
 <div id="header">
 <h1>Latest Feeds</h1>
 </div>
+
 <div id="content">
+<%= render 'refresh_form' %>
 <%= paginate @feed_entries, :theme => 'twitter-bootstrap'%>
 <p><%= render(@feed_entries) || 'There is no Feeds'%><p>
 <%= paginate @feed_entries, :theme => 'twitter-bootstrap'%>
 </div>
+
 <div id="sidebar">
 <p>
 <li>
@@ -15,7 +18,7 @@
 </li>
 <li>
 	<%= form_for @search do |f|%>
-    <%= f.hidden_field :is_star_equals, value: 'true' %>
+    <%= f.hidden_field :is_star_eq, value: 'true' %>
     <%= f.submit "Stared" %>
 	<% end %>
 </li>
@@ -25,6 +28,6 @@
     <%= f.submit "To Read" %>
 	<% end %>
 </li>
-<li><h5> Subscription <%= render @app_keys %> </h5><li>
+<h5> Subscription <%= render @app_keys %> </h5>
 </p>
 </div>
